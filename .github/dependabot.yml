@@ -5,6 +5,13 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 10
+    # Newtonsoft.Json 10.0.2 was only declared in the removed
+    # AzCopyAndDelete/AzCopyAndDelete/packages.config (Dependabot #2).
+    # SDK-style projects on this branch do not reference it.
+    groups:
+      nuget:
+        patterns:
+          - "*"
 
   - package-ecosystem: github-actions
     directory: "/"
